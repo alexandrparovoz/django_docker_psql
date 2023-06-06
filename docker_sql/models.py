@@ -10,3 +10,9 @@ class Clients(models.Model):
     def __str__(self):
         return self.last_name
 
+class TypeService(models.Model):
+    service = models.TextField(max_length=255)
+    price = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.service
