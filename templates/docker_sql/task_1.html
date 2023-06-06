@@ -1,0 +1,15 @@
+{%  extends 'docker_sql/base.html' %}
+    {% block title %}Task1{% endblock %}
+
+{%  block content %}
+<h2>TASK 1</h2>
+    <p>
+    <ol>
+    {% for client in clients %}
+    <li>
+        Client:{{ client.last_name }}, City:{{ client.city }}, Total:{{ client.total }}
+    </li>
+    {% endfor %}
+    </ol>
+    </p>
+{% endblock %}

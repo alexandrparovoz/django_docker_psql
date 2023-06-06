@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{%  block title %}{% endblock %}</title>
+	<link type="text/css" href="{% static 'docker_sql/css/docker_sql.css' %}" rel="stylesheet" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="shortcut icon" href="#" type="image/x-icon"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<table class="table-page" border=0 cellpadding="0" cellspacing="0">
+<tr><td valign=top>
+<!-- блок mainmenu -->
+		<div class="header">
+			<ul id="mainmenu" class="mainmenu">
+			<li class="logo"><a href="#"><div class="logo"></div></a></li>
+			<li><a href="#">Контакты</a></li>
+                <li class="last"><a href="#">Зарегистрироваться</a> | <a href="#">Ворваться</a></li>
+                <li class="last"><a href="#">Добавить статью</a></li>
+                <li class="last"><a href="#">Галерея</a></li>
+			<li class="last"><a href="/">Главная</a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+<!-- конец mainmenu -->
+
+
+<table class="table-content" border=0 cellpadding="0" cellspacing="0">
+<tr>
+<!-- Sidebar слева -->
+	<td valign="top" class="left-chapters">
+	<ul id="leftchapters">
+    <!-- здесь категории -->
+        <li><a href="#">Все задачи</a></li>
+		<li><a href="/task_1">Задача 1</a></li>
+        <li><a href="/task_2">Задача 2</a></li>
+		<li><a href="/task_3">Задача 3</a></li>
+        <li><a href="/task_4">Задача 4</a></li>
+        <li><a href="/orders">Заказы</a></li>
+		<li class="share">
+		<p>Знакомство с нами</p>
+		<a class="share-yt" href="#" target="_blank" rel="nofollow"></a> <!--Ссылка на ролик -->
+		</li>
+	</ul>
+</td>
+<!-- Конец Sidebar -->
+<td valign="top" class="content">
+
+<!-- главный блок -->
+	<div class="content-text">
+{% block content %}
+{% endblock %}
+	</div>
+<!-- конец блока  -->
+
+</td></tr></table>
+</td></tr>
+<!-- подвал -->
+<tr><td valign=top>
+	<div id="footer">
+		<p>&copy; 2023 Hа Коваленко Александра Васильевича ссылаться строго запрещено! Он ни при чем.</p>
+	</div>
+</td></tr></table>
+<!-- Конец подвала -->

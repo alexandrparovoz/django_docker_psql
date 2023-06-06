@@ -16,3 +16,16 @@ class TypeService(models.Model):
 
     def __str__(self):
         return self.service
+
+class Auto(models.Model):
+    car_model = models.CharField(max_length=100)
+    model_year = models.CharField(max_length=4, null=True)
+    client = models.ForeignKey(Clients, on_delete=models.PROTECT)
+
+    def __str__(self):
+        return self.car_model
+
+class Order(models.Model):
+    auto_model = models.ForeignKey(Auto, on_delete=models.PROTECT)
+    type_service = models.ForeignKey(TypeService, on_delete=models.PROTECT)
+    date = models.DateTimeField(auto_now_add=True)

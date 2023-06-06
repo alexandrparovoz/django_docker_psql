@@ -1,0 +1,15 @@
+{%  extends 'docker_sql/base.html' %}
+    {% block title %}Task4{% endblock %}
+
+{%  block content %}
+<h2>TASK  4</h2>
+    <p>
+ <ol>
+     {% for service in services %}
+        <li>
+            Service:{{ service.service }}, Price:{{ service.price }}
+        </li>
+     {% endfor %}
+ </ol>
+    </p>
+{% endblock %}
