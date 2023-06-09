@@ -1,3 +1,5 @@
+import datetime
+
 from django.shortcuts import render
 from django.db.models import *
 
@@ -16,8 +18,8 @@ def task_1(request):
     return render(request, 'docker_sql/task_1.html', {'clients': clients})
 
 def task_2(request):
-    cities = Order.objects.values('auto_model__client_id__city','date').\
-        annotate(total=Sum('type_service_id__price')).filter(date__minute__range=(10, 15)).\
+    cities = Order.objects.values('auto_model__client__city', 'date').\
+        annotate(total=Sum('type_service_id__price')).filter(date__lt=datetime.date(2023, 6, 6)).\
         order_by('-total')
     return render(request, 'docker_sql/task_2.html', {'cities': cities})
 
